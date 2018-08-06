@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style type="text/css">
+		#lunbodiv{
+			width: 300px;
+			height: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=init;
+		var i=1;
+		var dsq;
+		function init(){
+			dsq = window.setInterval("tupian()",1000);
+		}
+		function tupian(){
+			i++;
+			if(i>5){
+				i=1;
+			}
+			var obj = document.getElementById("lunbo");
+			obj.src = "image/果香有机茶"+i+".png";
+		}
+		function stoptupian(){
+			window.clearInterval(dsq);
+		}
+		function starttupian(){
+			dsq = window.setInterval("tupian()",1000);
+		}
+		
+	</script>
+</head>
+
+<body>
+	<audio controls="controls" autoplay="autoplay">                    
+		<source src="music/邓鼓 - 不客气.mp3" type="audio/mpeg">
+	</audio>
+	<div id="lunbodiv">
+		<img id="lunbo" alt="#" src="image/果香有机茶1.png" onmouseover="stoptupian()" onMouseOut="starttupian()">
+	</div>
+</body>
+</html>
